@@ -34,8 +34,9 @@ Et l’image associée :
 
 
 Fichiers :
-- [the-pake-is-a-lie.py](the-pake-is-a-lie.py)
-- [output.txt](output.txt)
+- [tortuga-flag.txt](tortuga-flag.txt)
+- [tortuga-example.txt](tortuga-example.txt)
+- [tortuga-example.png](tortuga-example.png)
 
 
 
