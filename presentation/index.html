@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #436</h3>
+                            <h2 class="section-title">Tortuga</h2>
+                            <p>On vous propose une séance de dessin !
+                                <br /><br />
+                                Le fichier <code>tortuga-flag.txt</code> contient le flag dessiné uniquement à l’aide de
+                                segments.
+                                <br /><br />
+                                La méthode pour encoder ces segments est simpliste. On fixe un point de départ
+                                <code>P(x, y)</code>
+                                initialisé à un point quelconque dans le plan, par exemple <code>(0, 0)</code>. Puis,
+                                chaque
+                                élément <code>(dx, dy)</code> dans la liste L fournie dans le fichier tortuga.txt permet
+                                d’atteindre un nouveau point <code>Q(x + dx, y + dy)</code> et le segment
+                                <code>PQ</code> est tracé
+                                entre ces
+                                deux points. Une fois ce segment tracé, le point courant <code>P</code> est remplacé par
+                                le point
+                                <code>Q</code>, et ce procédé est itéré sur tous les éléments de la liste.
+                                <br /><br />
+                                Afin d’autoriser plusieurs symboles, la valeur spéciale <code>(0, 0)</code> pour
+                                <code>(dx, dy)</code> est
+                                utilisée pour déplacer le point <code>P</code> comme décrit ci-dessus avec l’élément
+                                suivant de la
+                                liste, mais aucun segment n’est tracé.
+                                <br /><br />
+                                On donne l’exemple suivant (<code>tortuga-example.txt</code>) où le point initial
+                                <code>P</code> est choisi
+                                tout en haut à gauche.
+                                <br />
+                            <pre><code class="language-python">[
+  # Draw triangle pointing down (drawn clockwise)
+  (2, 0), (-1, 2), (-1, -2),
+  # Skip
+  (0, 0), (3, 0),
+  # Draw triangle pointing up (drawn counterclockwise)
+  (-1, 2), (2, 0), (-1, -2),
+  # Skip
+  (0, 0), (1, 0),
+] * 6
+</code></pre>
+                            Et l’image associée : <br />
+                            <img src="./assets/images/tortuga-example.png">
+                            <br />
+                            <strong>Note :</strong> le flag est de la forme <code>FCSC{[0-9]+}</code>.
+                            <img src="./assets/images/tortuga-meme.jpg">
+                            </p>
+
+                            <h4>Fichiers à étudier</h4>
+                            <p>
+                                - tortuga-flag.txt<br />
+                                - tortuga-example.txt<br />
+                                - tortuga-example.png
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2024</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-tortuga/">FCSC
+                                    2024 -
+                                    Tortuga
+                                </a>
+                                <br />
+                                Auteur: <a target="_blank" href="https://twitter.com/Cryptanalyse">Cryptanalyse</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>
