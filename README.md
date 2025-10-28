@@ -41,7 +41,7 @@ Fichiers :
 
 
 
-Auteur : [Cryptanalyse](https://twitter.com/Cryptanalyse)
+Auteur : [Cryptanalyse](https://x.com/Cryptanalyse)
 
 Origine : [Tortuga](https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-tortuga/)
 
